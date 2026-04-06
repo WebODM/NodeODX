@@ -1,8 +1,8 @@
 # NodeODM
 
-[![Build Status](https://travis-ci.org/OpenDroneMap/NodeODM.svg?branch=master)](https://travis-ci.org/OpenDroneMap/NodeODM)
+[![Build Status](https://travis-ci.org/WebODM/NodeODM.svg?branch=master)](https://travis-ci.org/WebODM/NodeODM)
 
-NodeODM is a [standard API specification](https://github.com/OpenDroneMap/NodeODM/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODM](https://github.com/OpenDroneMap/ODM). The API is used by clients such as [WebODM](https://github.com/OpenDroneMap/WebODM), [CloudODM](https://github.com/OpenDroneMap/CloudODM) and [PyODM](https://github.com/OpenDroneMap/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
+NodeODM is a [standard API specification](https://github.com/WebODM/NodeODM/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODM](https://github.com/OpenDroneMap/ODM). The API is used by clients such as [WebODM](https://github.com/OpenDroneMap/WebODM), [CloudODM](https://github.com/OpenDroneMap/CloudODM) and [PyODM](https://github.com/OpenDroneMap/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
 
 ![image](https://user-images.githubusercontent.com/1951843/78455986-4805ab80-766f-11ea-8a79-1691e062600c.png)
 
@@ -12,7 +12,7 @@ We recommend that you setup NodeODM using [Docker](https://www.docker.com/).
 
 * From the Docker Quickstart Terminal (Windows / OSX) or from the command line (Linux) type:
 ```
-docker run -p 3000:3000 opendronemap/nodeodm
+docker run -p 3000:3000 WebODM/nodeodm
 ```
 
 * If you're on Windows/OSX, find the IP of your Docker machine by running this command from your Docker Quickstart Terminal:
@@ -95,9 +95,9 @@ spython recipe Dockerfile &> apptainer.def
 
 ## API Docs
 
-See the [API documentation page](https://github.com/OpenDroneMap/NodeODM/blob/master/docs/index.adoc).
+See the [API documentation page](https://github.com/WebODM/NodeODM/blob/master/docs/index.adoc).
 
-Some minor breaking changes exist from version `1.x` to `2.x` of the API. See [migration notes](https://github.com/OpenDroneMap/NodeODM/blob/master/MIGRATION.md).
+Some minor breaking changes exist from version `1.x` to `2.x` of the API. See [migration notes](https://github.com/WebODM/NodeODM/blob/master/MIGRATION.md).
 
 ## Run Tasks from the Command Line
 
@@ -108,17 +108,17 @@ You can use [CloudODM](https://github.com/OpenDroneMap/CloudODM) to run tasks wi
 If you want to store results on a separate drive, map the `/var/www/data` folder to the location of your drive:
 
 ```bash
-docker run -p 3000:3000 -v /mnt/external_hd:/var/www/data opendronemap/nodeodm
+docker run -p 3000:3000 -v /mnt/external_hd:/var/www/data WebODM/nodeodm
 ```
 
 This can be also used to access the computation results directly from the file system.
 
 ## Using GPU Acceleration
 
-Since ODM has support [for GPU acceleration](https://github.com/OpenDroneMap/ODM#gpu-acceleration) you can use another base image for GPU processing. You need to use the `opendronemap/nodeodm:gpu` docker image instead of `opendronemap/nodeodm` and you need to pass the `--gpus all` flag:
+Since ODM has support [for GPU acceleration](https://github.com/OpenDroneMap/ODM#gpu-acceleration) you can use another base image for GPU processing. You need to use the `WebODM/nodeodm:gpu` docker image instead of `WebODM/nodeodm` and you need to pass the `--gpus all` flag:
 
 ```bash
-docker run -p 3000:3000 --gpus all opendronemap/nodeodm:gpu
+docker run -p 3000:3000 --gpus all WebODM/nodeodm:gpu
 ```
 
 The GPU implementation is CUDA-based, so will only work on NVIDIA GPUs.
@@ -146,7 +146,7 @@ See https://github.com/NVIDIA/nvidia-docker and https://docs.nvidia.com/datacent
 
 ### Windows Bundle
 
-NodeODM can run as a self-contained executable on Windows without the need for additional dependencies (except for [ODM](https://github.com/OpenDroneMap/ODM) which needs to be installed separately). You can download the latest `nodeodm-windows-x64.zip` bundle from the [releases](https://github.com/OpenDroneMap/NodeODM/releases) page. Extract the contents in a folder and run:
+NodeODM can run as a self-contained executable on Windows without the need for additional dependencies (except for [ODM](https://github.com/OpenDroneMap/ODM) which needs to be installed separately). You can download the latest `nodeodm-windows-x64.zip` bundle from the [releases](https://github.com/WebODM/NodeODM/releases) page. Extract the contents in a folder and run:
 
 ```bash
 nodeodm.exe --odm_path c:\path\to\ODM
@@ -163,7 +163,7 @@ If you are already running [ODM](https://github.com/OpenDroneMap/ODM) on Ubuntu 
 ```bash
 sudo curl --silent --location https://deb.nodesource.com/setup_6.x | sudo bash -
 sudo apt-get install -y nodejs python-gdal p7zip-full unzip
-git clone https://github.com/OpenDroneMap/NodeODM
+git clone https://github.com/WebODM/NodeODM
 cd NodeODM
 npm install
 ```
@@ -246,4 +246,4 @@ Make a pull request for small contributions. For big contributions, please open 
 
 ## Roadmap
 
-See the [list of wanted features](https://github.com/OpenDroneMap/NodeODM/issues?q=is%3Aopen+is%3Aissue+label%3A%22new+feature%22).
+See the [list of wanted features](https://github.com/WebODM/NodeODM/issues?q=is%3Aopen+is%3Aissue+label%3A%22new+feature%22).
