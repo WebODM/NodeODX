@@ -430,7 +430,7 @@ app.get('/task/:uuid/info', authCheck, getTaskFromUuid, (req, res) => {
 /** @swagger
  *  /task/{uuid}/output:
  *     get:
- *       description: Retrieves the console output of the OpenDroneMap's process. Useful for monitoring execution and to provide updates to the user.
+ *       description: Retrieves the console output of the ODM process. Useful for monitoring execution and to provide updates to the user.
  *       tags: [task]
  *       parameters:
  *        -
@@ -469,7 +469,7 @@ app.get('/task/:uuid/output', authCheck, getTaskFromUuid, (req, res) => {
 /** @swagger
  *  /task/{uuid}/download/{asset}:
  *    get:
- *      description: Retrieves an asset (the output of OpenDroneMap's processing) associated with a task
+ *      description: Retrieves an asset (the output of ODM processing) associated with a task
  *      tags: [task]
  *      produces: [application/zip]
  *      parameters:
@@ -679,7 +679,7 @@ app.post('/task/restart', urlEncodedBodyParser, jsonBodyParser, authCheck, uuidC
  *             properties:
  *               name:
  *                 type: string
- *                 description: Command line option (exactly as it is passed to the OpenDroneMap process, minus the leading '--')
+ *                 description: Command line option (exactly as it is passed to the ODM process, minus the leading '--')
  *               type:
  *                 type: string
  *                 description: Datatype of the value of this option

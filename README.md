@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/WebODM/NodeODM.svg?branch=master)](https://travis-ci.org/WebODM/NodeODM)
 
-NodeODM is a [standard API specification](https://github.com/WebODM/NodeODM/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODM](https://github.com/OpenDroneMap/ODM). The API is used by clients such as [WebODM](https://github.com/OpenDroneMap/WebODM), [CloudODM](https://github.com/OpenDroneMap/CloudODM) and [PyODM](https://github.com/OpenDroneMap/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
+NodeODM is a [standard API specification](https://github.com/WebODM/NodeODM/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODM](https://github.com/WebODM/ODM). The API is used by clients such as [WebODM](https://github.com/WebODM/WebODM), [CloudODM](https://github.com/WebODM/CloudODM) and [PyODM](https://github.com/WebODM/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
 
 ![image](https://user-images.githubusercontent.com/1951843/78455986-4805ab80-766f-11ea-8a79-1691e062600c.png)
 
@@ -24,11 +24,11 @@ docker-machine ip
 Linux users can connect to 127.0.0.1.
 
 * Open a Web Browser to `http://<yourDockerMachineIp>:3000`
-* Load [some images](https://github.com/OpenDroneMap/ODMdata)
+* Load [some images](https://webodm.org/datasets)
 * Press "Start Task"
 * Go for a walk :)
 
-If the computer running NodeODM is using an old or 32bit CPU, you need to compile OpenDroneMap from sources and setup NodeODM natively. You cannot use docker. Docker images work with CPUs with 64-bit extensions, MMX, SSE, SSE2, SSE3 and SSSE3 instruction set support or higher. Seeing a `Illegal instruction` error while processing images is an indication that your CPU is too old. 
+If the computer running NodeODM is using an old or 32bit CPU, you need to compile ODM from sources and setup NodeODM natively. You cannot use docker. Docker images work with CPUs with 64-bit extensions, MMX, SSE, SSE2, SSE3 and SSSE3 instruction set support or higher. Seeing a `Illegal instruction` error while processing images is an indication that your CPU is too old. 
 
 ### Building docker image
 
@@ -84,7 +84,7 @@ apptainer build --sandbox node/ apptainer.def
 apptainer run --writable node/ 
 ```
 
-`apptainer build --sandbox` requires you to have root permission to build this apptainer container. Make sure someone with root permission build this for you. You will need to build this apptainer container if you want to work with ClusterODM on the HPC. Check for [ClusterODM](https://github.com/OpenDroneMap/ClusterODM) for more instructions on using SLURM to set it up.
+`apptainer build --sandbox` requires you to have root permission to build this apptainer container. Make sure someone with root permission build this for you. You will need to build this apptainer container if you want to work with ClusterODM on the HPC. Check for [ClusterODM](https://github.com/WebODM/ClusterODM) for more instructions on using SLURM to set it up.
 
 An apptainer.def file can be built directly from the dockerfile as needed:
 
@@ -101,7 +101,7 @@ Some minor breaking changes exist from version `1.x` to `2.x` of the API. See [m
 
 ## Run Tasks from the Command Line
 
-You can use [CloudODM](https://github.com/OpenDroneMap/CloudODM) to run tasks with NodeODM from the command line.
+You can use [CloudODM](https://github.com/WebODM/CloudODM) to run tasks with NodeODM from the command line.
 
 ## Using an External Hard Drive
 
@@ -115,7 +115,7 @@ This can be also used to access the computation results directly from the file s
 
 ## Using GPU Acceleration
 
-Since ODM has support [for GPU acceleration](https://github.com/OpenDroneMap/ODM#gpu-acceleration) you can use another base image for GPU processing. You need to use the `WebODM/nodeodm:gpu` docker image instead of `WebODM/nodeodm` and you need to pass the `--gpus all` flag:
+Since ODM has support [for GPU acceleration](https://github.com/WebODM/ODM#gpu-acceleration) you can use another base image for GPU processing. You need to use the `WebODM/nodeodm:gpu` docker image instead of `WebODM/nodeodm` and you need to pass the `--gpus all` flag:
 
 ```bash
 docker run -p 3000:3000 --gpus all WebODM/nodeodm:gpu
@@ -146,7 +146,7 @@ See https://github.com/NVIDIA/nvidia-docker and https://docs.nvidia.com/datacent
 
 ### Windows Bundle
 
-NodeODM can run as a self-contained executable on Windows without the need for additional dependencies (except for [ODM](https://github.com/OpenDroneMap/ODM) which needs to be installed separately). You can download the latest `nodeodm-windows-x64.zip` bundle from the [releases](https://github.com/WebODM/NodeODM/releases) page. Extract the contents in a folder and run:
+NodeODM can run as a self-contained executable on Windows without the need for additional dependencies (except for [ODM](https://github.com/WebODM/ODM) which needs to be installed separately). You can download the latest `nodeodm-windows-x64.zip` bundle from the [releases](https://github.com/WebODM/NodeODM/releases) page. Extract the contents in a folder and run:
 
 ```bash
 nodeodm.exe --odm_path c:\path\to\ODM
@@ -154,7 +154,7 @@ nodeodm.exe --odm_path c:\path\to\ODM
 
 ### Run it Natively
 
-If you are already running [ODM](https://github.com/OpenDroneMap/ODM) on Ubuntu natively you can follow these steps:
+If you are already running [ODM](https://github.com/WebODM/ODM) on Ubuntu natively you can follow these steps:
 
 1) Install Entwine: https://entwine.io/quickstart.html#installation
  
@@ -177,13 +177,13 @@ node index.js
 You may need to specify your ODM project path to start the server:
 
 ```
-node index.js --odm_path /home/username/OpenDroneMap
+node index.js --odm_path /home/username/ODM
 ```
 
 If you want to start node ODM on a different port you can do the following:
 
 ```
-node index.js --port 8000 --odm_path /home/username/OpenDroneMap
+node index.js --port 8000 --odm_path /home/username/ODM
 ```
 
 For other command line options you can run:
@@ -224,13 +224,13 @@ You can monitor the process using `pm2 status`.
 
 ### Test Mode
 
-If you want to make a contribution, but don't want to setup OpenDroneMap, or perhaps you are working on a Windows machine, or if you want to run automated tests, you can turn test mode on:
+If you want to make a contribution, but don't want to setup ODM, or perhaps you are working on a Windows machine, or if you want to run automated tests, you can turn test mode on:
 
 ```
 node index.js --test
 ```
 
-While in test mode all calls to OpenDroneMap's code will be simulated (see the /tests directory for the mock data that is returned).
+While in test mode all calls to ODM code will be simulated (see the /tests directory for the mock data that is returned).
 
 ### Test Images
 
@@ -238,7 +238,7 @@ You can find some test drone images [here](https://github.com/dakotabenjamin/odm
 
 ## What if I need more functionality?
 
-NodeODM is meant to be a lightweight API. If you are looking for a more comprehensive solution to drone mapping, check out [WebODM](https://github.com/OpenDroneMap/WebODM), which uses NodeODM for processing.
+NodeODM is meant to be a lightweight API. If you are looking for a more comprehensive solution to drone mapping, check out [WebODM](https://github.com/WebODM/WebODM), which uses NodeODM for processing.
 
 ## Contributing
 

@@ -105,7 +105,7 @@ function fromConfigFile(prop, defaultValue){
 }
 
 // Instance name - default name for this configuration
-config.instance = fromConfigFile("instance", 'node-OpenDroneMap');
+config.instance = fromConfigFile("instance", 'NodeODM');
 config.odm_path = argv.odm_path || fromConfigFile("odm_path", '/code');
 
 // Logging configuration

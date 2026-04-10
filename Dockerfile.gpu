@@ -1,4 +1,4 @@
-ARG FROM_REPO=webodm/odm
+ARG FROM_REPO=webodm/odm:gpu
 FROM ${FROM_REPO}
 MAINTAINER Piero Toffanin <pt@masseranolabs.com>
 

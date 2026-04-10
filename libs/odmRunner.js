@@ -158,7 +158,7 @@ module.exports = {
                             }
                         });
                     }catch(err){
-                        handleResult(new Error(`Could not load list of options from ODM. Is ODM installed in ${config.odm_path}? Make sure that OpenDroneMap is installed and that --odm_path is set properly: ${err.message}`));
+                        handleResult(new Error(`Could not load list of options from ODM. Is ODM installed in ${config.odm_path}? Make sure that ODM is installed and that --odm_path is set properly: ${err.message}`));
                     }
                 })
                 .on('error', handleResult);

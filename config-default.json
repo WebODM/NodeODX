@@ -1,5 +1,5 @@
 {
-	"instance": "node-OpenDroneMap",
+	"instance": "NodeODM",
 	"odm_path": "/code",
 
 	"logger": {

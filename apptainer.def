@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: opendronemap/odm:latest
+From: webodm/odm:latest
 Stage: spython-base
 
 %files
