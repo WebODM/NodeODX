@@ -10,7 +10,7 @@ NodeODM is a [standard API specification](https://github.com/WebODM/NodeODM/blob
 
 We recommend that you setup NodeODM using [Docker](https://www.docker.com/).
 
-* From the Docker Quickstart Terminal (Windows / OSX) or from the command line (Linux) type:
+* From a command prompt / terminal type:
 ```
 docker run -p 3000:3000 webodm/nodeodm
 ```
