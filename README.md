@@ -12,7 +12,7 @@ We recommend that you setup NodeODM using [Docker](https://www.docker.com/).
 
 * From the Docker Quickstart Terminal (Windows / OSX) or from the command line (Linux) type:
 ```
-docker run -p 3000:3000 WebODM/nodeodm
+docker run -p 3000:3000 webodm/nodeodm
 ```
 
 * If you're on Windows/OSX, find the IP of your Docker machine by running this command from your Docker Quickstart Terminal:
@@ -108,17 +108,17 @@ You can use [CloudODM](https://github.com/WebODM/CloudODM) to run tasks with Nod
 If you want to store results on a separate drive, map the `/var/www/data` folder to the location of your drive:
 
 ```bash
-docker run -p 3000:3000 -v /mnt/external_hd:/var/www/data WebODM/nodeodm
+docker run -p 3000:3000 -v /mnt/external_hd:/var/www/data webodm/nodeodm
 ```
 
 This can be also used to access the computation results directly from the file system.
 
 ## Using GPU Acceleration
 
-Since ODM has support [for GPU acceleration](https://github.com/WebODM/ODM#gpu-acceleration) you can use another base image for GPU processing. You need to use the `WebODM/nodeodm:gpu` docker image instead of `WebODM/nodeodm` and you need to pass the `--gpus all` flag:
+Since ODM has support [for GPU acceleration](https://github.com/WebODM/ODM#gpu-acceleration) you can use another base image for GPU processing. You need to use the `webodm/nodeodm:gpu` docker image instead of `webodm/nodeodm` and you need to pass the `--gpus all` flag:
 
 ```bash
-docker run -p 3000:3000 --gpus all WebODM/nodeodm:gpu
+docker run -p 3000:3000 --gpus all webodm/nodeodm:gpu
 ```
 
 The GPU implementation is CUDA-based, so will only work on NVIDIA GPUs.
