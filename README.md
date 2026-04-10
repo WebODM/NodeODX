@@ -4,7 +4,7 @@
 
 NodeODM is a [standard API specification](https://github.com/WebODM/NodeODM/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODM](https://github.com/WebODM/ODM). The API is used by clients such as [WebODM](https://github.com/WebODM/WebODM), [CloudODM](https://github.com/WebODM/CloudODM) and [PyODM](https://github.com/WebODM/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
 
-![image](https://user-images.githubusercontent.com/1951843/78455986-4805ab80-766f-11ea-8a79-1691e062600c.png)
+<img width="915" height="254" alt="image" src="https://github.com/user-attachments/assets/3754a3b3-ba8c-4957-b2c6-59bc1bcafb8a" />
 
 ## Getting Started
 
