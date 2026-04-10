@@ -1,6 +1,6 @@
 # NodeODM
 
-[![Build Status](https://travis-ci.org/WebODM/NodeODM.svg?branch=master)](https://travis-ci.org/WebODM/NodeODM)
+![Build Status](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/build-and-publish.yml?branch=master) ![Version](https://img.shields.io/github/v/release/WebODM/NodeODM)
 
 NodeODM is a [standard API specification](https://github.com/WebODM/NodeODM/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODM](https://github.com/WebODM/ODM). The API is used by clients such as [WebODM](https://github.com/WebODM/WebODM), [CloudODM](https://github.com/WebODM/CloudODM) and [PyODM](https://github.com/WebODM/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
 
