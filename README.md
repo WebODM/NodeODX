@@ -15,15 +15,9 @@ We recommend that you setup NodeODM using [Docker](https://www.docker.com/).
 docker run -p 3000:3000 webodm/nodeodm
 ```
 
-* If you're on Windows/OSX, find the IP of your Docker machine by running this command from your Docker Quickstart Terminal:
-
-```
-docker-machine ip
-```
-
 Linux users can connect to 127.0.0.1.
 
-* Open a Web Browser to `http://<yourDockerMachineIp>:3000`
+* Open a Web Browser to `http://127.0.0.1:3000`
 * Load [some images](https://webodm.org/datasets)
 * Press "Start Task"
 * Go for a walk :)
