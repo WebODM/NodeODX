@@ -1,6 +1,9 @@
 # NodeODM
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/publish-docker.yml?branch=master) ![Version](https://img.shields.io/github/v/release/WebODM/NodeODM)
+![CPU Build](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/publish-docker.yml?branch=master&label=docker%20CPU) ![GPU Build](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/publish-docker-gpu.yml?branch=master&label=docker%20GPU) ![Windows Build](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/publish-windows.yml?branch=master&label=windows) ![Version](https://img.shields.io/github/v/release/WebODM/NodeODM) ![License](https://img.shields.io/github/license/WebODM/NodeODM) ![Contributors](https://img.shields.io/github/contributors/WebODM/NodeODM) ![Updated](https://img.shields.io/github/last-commit/WebODM/NodeODM)
+
+> **📢 Now with upgraded AWS SDK!** [Read the announcement](https://webodm.org/blog/announcement/)
+
 
 NodeODM is a [standard API specification](https://github.com/WebODM/NodeODM/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODM](https://github.com/WebODM/ODM). The API is used by clients such as [WebODM](https://github.com/WebODM/WebODM), [CloudODM](https://github.com/WebODM/CloudODM) and [PyODM](https://github.com/WebODM/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
 
