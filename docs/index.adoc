@@ -8,7 +8,7 @@ REST API to access ODM
 
 === Version information
 [%hardbreaks]
-_Version_ : 2.2.4
+_Version_ : 2.3.0
 
 
 === Contact information
