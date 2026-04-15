@@ -1,6 +1,6 @@
 # NodeODM
 
-![CPU Build](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/publish-docker.yml?branch=master&label=docker%20CPU) ![GPU Build](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/publish-docker-gpu.yml?branch=master&label=docker%20GPU) ![Windows Build](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/publish-windows.yml?branch=master&label=windows) ![Version](https://img.shields.io/github/v/release/WebODM/NodeODM) ![License](https://img.shields.io/github/license/WebODM/NodeODM) ![Contributors](https://img.shields.io/github/contributors/WebODM/NodeODM) ![Updated](https://img.shields.io/github/last-commit/WebODM/ODM)
+![CPU Build](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/publish-docker.yml?branch=master&label=docker%20CPU) ![GPU Build](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/publish-docker-gpu.yml?branch=master&label=docker%20GPU) ![Windows Build](https://img.shields.io/github/actions/workflow/status/WebODM/NodeODM/publish-windows.yml?branch=master&label=windows) ![Version](https://img.shields.io/github/v/release/WebODM/NodeODM) ![License](https://img.shields.io/github/license/WebODM/NodeODM) ![Contributors](https://img.shields.io/github/contributors/WebODM/NodeODM) ![Updated](https://img.shields.io/github/last-commit/WebODM/NodeODM)
 
 > **📢 Now with upgraded AWS SDK!** [Read the announcement](https://webodm.org/blog/announcement/)
 
