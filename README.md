@@ -5,7 +5,7 @@
 > **📢 Now with upgraded AWS SDK!** [Read the announcement](https://webodm.org/blog/announcement/)
 
 
-NodeODX is a [standard API specification](https://github.com/WebODM/NodeODX/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODM](https://github.com/WebODM/ODX). The API is used by clients such as [WebODM](https://github.com/WebODM/WebODM), [CloudODM](https://github.com/WebODM/CloudODM) and [PyODM](https://github.com/WebODM/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
+NodeODX is a [standard API specification](https://github.com/WebODM/NodeODX/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODX](https://github.com/WebODM/ODX). The API is used by clients such as [WebODM](https://github.com/WebODM/WebODM), [CloudODM](https://github.com/WebODM/CloudODM) and [PyODM](https://github.com/WebODM/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
 
 <img width="915" height="254" alt="image" src="https://github.com/user-attachments/assets/3754a3b3-ba8c-4957-b2c6-59bc1bcafb8a" />
 
@@ -143,7 +143,7 @@ See https://github.com/NVIDIA/nvidia-docker and https://docs.nvidia.com/datacent
 
 ### Windows Bundle
 
-NodeODX can run as a self-contained executable on Windows without the need for additional dependencies (except for [ODM](https://github.com/https://github.com/WebODM/ODX) which needs to be installed separately). You can download the latest `nodeodx-windows-x64.zip` bundle from the [releases](https://github.com/WebODM/NodeODX/releases) page. Extract the contents in a folder and run:
+NodeODX can run as a self-contained executable on Windows without the need for additional dependencies (except for [ODX](https://github.com/https://github.com/WebODM/ODX) which needs to be installed separately). You can download the latest `nodeodx-windows-x64.zip` bundle from the [releases](https://github.com/WebODM/NodeODX/releases) page. Extract the contents in a folder and run:
 
 ```bash
 nodeodx.exe --odx_path c:\path\to\ODX
@@ -151,7 +151,7 @@ nodeodx.exe --odx_path c:\path\to\ODX
 
 ### Run it Natively
 
-If you are already running [ODM](https://github.com/https://github.com/WebODM/ODX) on Ubuntu natively you can follow these steps:
+If you are already running [ODX](https://github.com/https://github.com/WebODM/ODX) on Ubuntu natively you can follow these steps:
 
 1) Install Entwine: https://entwine.io/quickstart.html#installation
  
@@ -221,13 +221,13 @@ You can monitor the process using `pm2 status`.
 
 ### Test Mode
 
-If you want to make a contribution, but don't want to setup ODM, or perhaps you are working on a Windows machine, or if you want to run automated tests, you can turn test mode on:
+If you want to make a contribution, but don't want to setup ODX, or perhaps you are working on a Windows machine, or if you want to run automated tests, you can turn test mode on:
 
 ```
 node index.js --test
 ```
 
-While in test mode all calls to ODM code will be simulated (see the /tests directory for the mock data that is returned).
+While in test mode all calls to ODX code will be simulated (see the /tests directory for the mock data that is returned).
 
 ### Test Images
 
