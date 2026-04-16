@@ -30,7 +30,7 @@ jobs:
       id: docker_meta
       uses: crazy-max/ghaction-docker-meta@v1
       with:
-        images: webodm/nodeodm
+        images: webodm/nodeodx
         tag-semver: |
           {{version}}
     - name: Build and push Docker image
@@ -41,4 +41,4 @@ jobs:
         platforms: linux/amd64
         push: true
         tags: |
-          webodm/nodeodm:gpu
+          webodm/nodeodx:gpu

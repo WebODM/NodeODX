@@ -1,6 +1,6 @@
 /*
-NodeODM App and REST API to access ODM.
-Copyright (C) 2016 NodeODM Contributors
+NodeODX App and REST API to access ODX.
+Copyright (C) 2026 NodeODX Contributors
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
@@ -30,7 +30,8 @@ Usage: node index.js [options]
 Options:
 	--config <path>	Path to the configuration file (default: config-default.json)	
 	-p, --port <number> 	Port to bind the server to, or "auto" to automatically find an available port (default: 3000)
-	--odm_path <path>	Path to ODM's code	(default: /code)
+	--odm_path <path>	Path to ODX's code (deprecated)	(default: /code)
+	--odx_path <path>	Path to ODX's code (default: /code)
 	--log_level <logLevel>	Set log level verbosity (default: info)
 	-d, --daemon 	Set process to run as a deamon
 	-q, --parallel_queue_processing <number> Number of simultaneous processing tasks (default: 2)
@@ -62,7 +63,7 @@ error | warn | info | verbose | debug | silly
 	process.exit(0);
 }
 
-const allOpts = ["slice","help","config","odm_path","log_level","port","p",
+const allOpts = ["slice","help","config","odm_path","odx_path","log_level","port","p",
 "deamonize","daemon","d","parallel_queue_processing","q",
 "cleanup_tasks_after","cleanup_uploads_after","test","test_skip_orthophotos",
 "test_skip_dems","test_drop_uploads","test_fail_tasks","test_seconds",
@@ -104,8 +105,11 @@ function fromConfigFile(prop, defaultValue){
 }
 
 // Instance name - default name for this configuration
-config.instance = fromConfigFile("instance", 'NodeODM');
-config.odm_path = argv.odm_path || fromConfigFile("odm_path", '/code');
+config.instance = fromConfigFile("instance", 'NodeODX');
+config.odx_path = argv.odx_path || argv.odm_path || fromConfigFile("odx_path", '/code') || fromConfigFile("odm_path", '/code');
+if (argv.odm_path){
+	console.log("(deprecation): odm_path is deprecated. Use --odx_path instead. --odm_path might be removed in the future.")
+}
 
 // Logging configuration
 config.logger = {};
