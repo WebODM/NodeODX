@@ -26,7 +26,7 @@ jobs:
         context: .
         platforms: linux/amd64
         push: true
-        tags: localhost:5000/webodm/nodeodm:test
+        tags: localhost:5000/webodm/nodeodx:test
     - name: Test Powercycle
       run: |
-        docker run --rm localhost:5000/webodm/nodeodm:test --powercycle
+        docker run --rm localhost:5000/webodm/nodeodx:test --powercycle

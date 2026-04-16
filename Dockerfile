@@ -1,4 +1,4 @@
-ARG FROM_REPO=webodm/odm
+ARG FROM_REPO=webodm/odx
 FROM ${FROM_REPO}
 MAINTAINER Piero Toffanin <pt@masseranolabs.com>
 
