@@ -5,7 +5,7 @@
 > **📢 Now with upgraded AWS SDK!** [Read the announcement](https://webodm.org/blog/announcement/)
 
 
-NodeODX is a [standard API specification](https://github.com/WebODM/NodeODX/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODX](https://github.com/WebODM/ODX). The API is used by clients such as [WebODM](https://github.com/WebODM/WebODM), [CloudODM](https://github.com/WebODM/CloudODM) and [PyODM](https://github.com/WebODM/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
+NodeODX is a [standard API specification](https://github.com/WebODM/NodeODX/blob/master/docs/index.adoc) for processing aerial images with engines such as [ODX](https://github.com/WebODM/ODX). The API is used by clients such as [WebODM](https://github.com/WebODM/WebODM), [CloudODX](https://github.com/WebODM/CloudODX) and [PyODM](https://github.com/WebODM/PyODM). This repository contains a performant, production-ready reference implementation written in NodeJS.
 
 <img width="915" height="254" alt="image" src="https://github.com/user-attachments/assets/3754a3b3-ba8c-4957-b2c6-59bc1bcafb8a" />
 
@@ -25,7 +25,7 @@ Linux users can connect to 127.0.0.1.
 * Press "Start Task"
 * Go for a walk :)
 
-If the computer running NodeODX is using an old or 32bit CPU, you need to compile ODM from sources and setup NodeODX natively. You cannot use docker. Docker images work with CPUs with 64-bit extensions, MMX, SSE, SSE2, SSE3 and SSSE3 instruction set support or higher. Seeing a `Illegal instruction` error while processing images is an indication that your CPU is too old. 
+If the computer running NodeODX is using an old or 32bit CPU, you need to compile ODX from sources and setup NodeODX natively. You cannot use docker. Docker images work with CPUs with 64-bit extensions, MMX, SSE, SSE2, SSE3 and SSSE3 instruction set support or higher. Seeing a `Illegal instruction` error while processing images is an indication that your CPU is too old. 
 
 ### Building docker image
 
@@ -42,9 +42,9 @@ docker run -p 3000:3000 mynodeodx &
 ```
 
 
-### Testing alternative ODM images through NodeODX
+### Testing alternative ODX images through NodeODX
 
-In order to test alternative ODM docker images in NodeODX, you will need to change the dockerfile for NodeODX to point to your ODM image. For example if you built an alternate ODM image as follows:
+In order to test alternative docker images in NodeODX, you will need to change the dockerfile for NodeODX to point to your ODX image. For example if you built an alternate ODX image as follows:
 
 ```
 docker build -t my_odx_image --no-cache .
@@ -74,14 +74,14 @@ docker run -p 3000:3000 my_nodeodx_image &
 
 ### Running rootless
 
-* A rootless alternative to Docker is using [Apptainer](https://apptainer.org/). In order to run NodeODX together with ClusterODM in rootless environments, for example on HPC, we need a rootless alternative to Docker, and that's where Apptainer comes in to play. From the Linux command line, cd into the NodeODX folder and run the following commands to host a NodeODX instance:
+* A rootless alternative to Docker is using [Apptainer](https://apptainer.org/). In order to run NodeODX together with ClusterODX in rootless environments, for example on HPC, we need a rootless alternative to Docker, and that's where Apptainer comes in to play. From the Linux command line, cd into the NodeODX folder and run the following commands to host a NodeODX instance:
 
 ```
 apptainer build --sandbox node/ apptainer.def
 apptainer run --writable node/ 
 ```
 
-`apptainer build --sandbox` requires you to have root permission to build this apptainer container. Make sure someone with root permission build this for you. You will need to build this apptainer container if you want to work with ClusterODM on the HPC. Check for [ClusterODM](https://github.com/WebODM/ClusterODM) for more instructions on using SLURM to set it up.
+`apptainer build --sandbox` requires you to have root permission to build this apptainer container. Make sure someone with root permission build this for you. You will need to build this apptainer container if you want to work with ClusterODX on the HPC. Check for [ClusterODX](https://github.com/WebODM/ClusterODX) for more instructions on using SLURM to set it up.
 
 An apptainer.def file can be built directly from the dockerfile as needed:
 
@@ -98,7 +98,7 @@ Some minor breaking changes exist from version `1.x` to `2.x` of the API. See [m
 
 ## Run Tasks from the Command Line
 
-You can use [CloudODM](https://github.com/WebODM/CloudODM) to run tasks with NodeODX from the command line.
+You can use [CloudODX](https://github.com/WebODM/CloudODX) to run tasks with NodeODX from the command line.
 
 ## Using an External Hard Drive
 
@@ -112,7 +112,7 @@ This can be also used to access the computation results directly from the file s
 
 ## Using GPU Acceleration
 
-Since ODM has support [for GPU acceleration](https://github.com/https://github.com/WebODM/ODX#gpu-acceleration) you can use another base image for GPU processing. You need to use the `webodm/nodeodx:gpu` docker image instead of `webodm/nodeodx` and you need to pass the `--gpus all` flag:
+Since ODX has support [for GPU acceleration](https://github.com/https://github.com/WebODM/ODX#gpu-acceleration) you can use another base image for GPU processing. You need to use the `webodm/nodeodx:gpu` docker image instead of `webodm/nodeodx` and you need to pass the `--gpus all` flag:
 
 ```bash
 docker run -p 3000:3000 --gpus all webodm/nodeodx:gpu
@@ -171,13 +171,13 @@ npm install
 node index.js
 ```
 
-You may need to specify your ODM project path to start the server:
+You may need to specify your ODX project path to start the server:
 
 ```
 node index.js --odx_path /home/username/ODX
 ```
 
-If you want to start node ODM on a different port you can do the following:
+If you want to start node ODX on a different port you can do the following:
 
 ```
 node index.js --port 8000 --odx_path /home/username/ODX
