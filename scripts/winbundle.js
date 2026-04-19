@@ -63,10 +63,10 @@ async.series([
     },
 
     cb => {
-        downloadApp(path.join("apps", "7z"), "https://github.com/OpenDroneMap/NodeODX/releases/download/v2.1.0/7z19.zip", cb);
+        downloadApp(path.join("apps", "7z"), "https://github.com/WebODM/NodeODX/releases/download/v2.3.0/7z19.zip", cb);
     },
     cb => {
-        downloadApp(path.join("apps", "unzip"), "https://github.com/OpenDroneMap/NodeODX/releases/download/v2.1.0/unzip600.zip", cb);
+        downloadApp(path.join("apps", "unzip"), "https://github.com/WebODM/NodeODX/releases/download/v2.3.0/unzip600.zip", cb);
     },
     cb => {
         console.log("Building executable");
