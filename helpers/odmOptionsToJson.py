@@ -37,20 +37,25 @@ def load_source(module_name, filename):
 
 dest_file = os.environ.get("ODX_OPTIONS_TMP_FILE")
 
-sys.path.append(sys.argv[2])
+odx_path = os.path.realpath(sys.argv[2])
+if not os.path.isdir(odx_path):
+    print(json.dumps({}))
+    sys.exit(1)
+
+sys.path.append(odx_path)
 config = None
 
 for module_dir in ["modules", "opendm"]:
-    if os.path.isdir(os.path.join(sys.argv[2], module_dir)):
+    if os.path.isdir(os.path.join(odx_path, module_dir)):
         try:
-            load_source(module_dir, sys.argv[2] + f"/{module_dir}/__init__.py")
+            load_source(module_dir, os.path.join(odx_path, module_dir, "__init__.py"))
         except:
             pass
         try:
-            load_source('context', sys.argv[2] + f"/{module_dir}/context.py")
+            load_source('context', os.path.join(odx_path, module_dir, "context.py"))
         except:
             pass
-        config = load_source('config', sys.argv[2] + f"/{module_dir}/config.py")
+        config = load_source('config', os.path.join(odx_path, module_dir, "config.py"))
         
         break
     
