@@ -241,6 +241,3 @@ NodeODX is meant to be a lightweight API. If you are looking for a more comprehe
 
 Make a pull request for small contributions. For big contributions, please open a discussion first. Please use ES6 syntax while writing new Javascript code so that we can keep the code base uniform.
 
-## Roadmap
-
-See the [list of wanted features](https://github.com/WebODM/NodeODX/issues?q=is%3Aopen+is%3Aissue+label%3A%22new+feature%22).
